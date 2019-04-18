@@ -26,7 +26,8 @@ class Student
   end
 
   def update
-    
+    query = <<-SQL
+      
   end
 
   def self.create_table
