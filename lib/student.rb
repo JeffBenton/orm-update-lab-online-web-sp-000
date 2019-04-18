@@ -40,6 +40,12 @@ class Student
     new_student
   end
 
+  def self.new_from_db(arr)
+    new_student = Student.new(arr[1], arr[2])
+    new_student.id = arr[0]
+    new_student
+  end
+
   def self.create_table
     query = <<-SQL
       CREATE TABLE students
