@@ -25,7 +25,7 @@ class Student
   
   def self.drop_table
     query = <<-SQL
-      DROP TABLE students
+      DROP TABLE students;
       SQL
     DB[:coon].execute(query)
   end
