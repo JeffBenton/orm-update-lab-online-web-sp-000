@@ -54,6 +54,7 @@ class Student
     DB[:conn].execute(query, name).map do |row|
       self.new_from_db(row)
     end.first
+  end
 
   def self.create_table
     query = <<-SQL
