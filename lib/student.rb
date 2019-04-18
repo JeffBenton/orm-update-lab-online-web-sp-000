@@ -45,6 +45,14 @@ class Student
     new_student
   end
 
+  def self.find_by_name(name)
+    query = <<-SQL
+      select * from students
+        where name = ?
+        limit 1;
+      SQL
+    
+
   def self.create_table
     query = <<-SQL
       CREATE TABLE students
