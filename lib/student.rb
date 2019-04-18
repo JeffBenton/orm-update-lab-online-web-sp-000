@@ -27,6 +27,6 @@ class Student
     query = <<-SQL
       DROP TABLE students;
       SQL
-    DB[:coon].execute(query)
+    DB[:conn].execute(query)
   end
 end
