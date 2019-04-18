@@ -12,6 +12,14 @@ class Student
     @grade = grade
   end
 
+  def save
+    query = <<-SQL
+      INSERT INTO students
+        (name, grade) VALUES (?, ?);
+      SQL
+    DB[:conn].execute(query, @name, @grade)
+  end
+
   def self.create_table
     query = <<-SQL
       CREATE TABLE students
