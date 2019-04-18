@@ -28,7 +28,7 @@ class Student
   def update
     query = <<-SQL
       UPDATE students
-        
+        set name = ?
   end
 
   def self.create_table
