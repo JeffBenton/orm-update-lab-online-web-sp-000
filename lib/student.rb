@@ -28,7 +28,10 @@ class Student
   def update
     query = <<-SQL
       UPDATE students
-        set name = ?
+        set name = ?, grade = ?
+        where id = ?;
+      SQL
+    DB[:conn].execute(query, @name, @grade, @id)
   end
 
   def self.create_table
